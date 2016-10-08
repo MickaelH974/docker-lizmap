@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#Start Fake Xserver before apache2
+service apache2 stop
+/etc/init.d/xvfb start
+service apache2 start
+
 #generate config file
 
 VAR="/var/www/websig/lizmap/var/config"
