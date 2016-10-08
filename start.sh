@@ -14,7 +14,3 @@ rm -f /var/run/apache2/apache2.pid
 
 exec /usr/sbin/apachectl -D FOREGROUND
 
-#Restart apache with fake Xserver
-service apache2 stop
-/etc/init.d/xvfb start
-service apache2 start
