@@ -58,3 +58,4 @@ ADD start.sh /start.sh
 RUN chmod 0755 /start.sh
 # Now launch apache in the foreground
 CMD /start.sh
+ENTRYPOINT /startfakex.sh
