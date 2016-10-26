@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#Start Fake Xserver before apache2
-service apache2 stop
-/etc/init.d/xvfb start
-service apache2 start
 
 #generate config file
 
@@ -15,6 +11,7 @@ if [ ! -d $VAR ]; then
 fi
 
 # Apache gets grumpy about PID files pre-existing
+/etc/init.d/xvfb start &&
 rm -f /var/run/apache2/apache2.pid
 
 exec /usr/sbin/apachectl -D FOREGROUND
